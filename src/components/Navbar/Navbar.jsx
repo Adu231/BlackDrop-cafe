@@ -114,7 +114,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X size={26} /> : <MenuIcon size={26} />}
+              {mobileMenuOpen ? <X size={20} /> : <MenuIcon size={20} />}
             </button>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function Navbar() {
             </div>
           </div>
           <button className="mobile-close-btn" onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
-            <X size={24} />
+            <X size={20} />
           </button>
         </div>
 
