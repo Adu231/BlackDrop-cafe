@@ -99,12 +99,12 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Desktop CTA & Mobile Toggle */}
+          {/* CTA & Mobile Toggle */}
           <div className="navbar-actions">
             <a
               href="#menu"
               onClick={(e) => handleNavClick(e, '#menu')}
-              className="btn-primary desktop-cta-btn"
+              className="btn-primary navbar-cta-btn"
             >
               <span>Explore Menu</span>
             </a>
@@ -114,7 +114,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X size={20} /> : <MenuIcon size={20} />}
+              {mobileMenuOpen ? <X size={22} /> : <MenuIcon size={22} />}
             </button>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function Navbar() {
             </div>
           </div>
           <button className="mobile-close-btn" onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
-            <X size={20} />
+            <X size={22} />
           </button>
         </div>
 
