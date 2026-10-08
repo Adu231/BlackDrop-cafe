@@ -1,0 +1,212 @@
+.gallery-section {
+  padding: 5.5rem 0;
+  background: var(--bg-secondary);
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.gallery-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.gallery-tab-btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.gallery-tab-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(201, 166, 107, 0.4);
+}
+
+.gallery-tab-btn.active {
+  background: var(--gold-primary);
+  color: #0A0A0A;
+  border-color: var(--gold-primary);
+  font-weight: 600;
+}
+
+/* Gallery Editorial Grid */
+.gallery-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .gallery-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .gallery-editorial-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 230px;
+  }
+
+  .gallery-card.col-span-2 {
+    grid-column: span 2;
+  }
+
+  .gallery-card.row-span-2 {
+    grid-row: span 2;
+  }
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  height: 250px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+@media (min-width: 992px) {
+  .gallery-card {
+    height: 100%;
+  }
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity var(--transition-fast);
+}
+
+.gallery-card:hover .gallery-img {
+  opacity: 0.9;
+}
+
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 10, 10, 0.85) 100%);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  transition: opacity var(--transition-fast);
+}
+
+.gallery-card:hover .gallery-card-overlay {
+  opacity: 1;
+}
+
+.gallery-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.gallery-item-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.gallery-item-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+/* Lightbox Modal */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 860px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.lightbox-close-btn:hover {
+  color: var(--gold-primary);
+}
+
+.lightbox-nav-btn {
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox-nav-btn:hover {
+  color: var(--gold-primary);
+  border-color: var(--gold-primary);
+}
+
+.lightbox-nav-btn.prev {
+  margin-right: 1.25rem;
+}
+
+.lightbox-nav-btn.next {
+  margin-left: 1.25rem;
+}
+
+.lightbox-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 80vh;
+}
+
+.lightbox-img {
+  max-height: 68vh;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-caption {
+  margin-top: 0.85rem;
+}
+
+.lightbox-caption h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.lightbox-caption p {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
